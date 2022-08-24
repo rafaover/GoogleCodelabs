@@ -130,3 +130,45 @@ class SmartHome (
         smartLightDevice.printDeviceInfo()
     }
 }
+
+class RangeRegulator(
+    initialValue: Int,
+    private val minValue: Int,
+    private val maxValue: Int
+) : ReadWriteProperty<Any?, Int> {
+
+    private var fieldData = initialValue
+    override fun getValue(thisRef: Any?, property: KProperty<*>): Int {
+        return fieldData
+    }
+    override fun setValue(thisRef: Any?, property: KProperty<*>, value: Int) {
+        if (value in minValue..maxValue) {
+            fieldData = value
+        }
+    }
+}
+
+fun main() {
+    val smartHome = SmartHome(
+        SmartTvDevice(deviceName = "Android TV", deviceCategory = "Entertainment"),
+        SmartLightDevice(deviceName = "Google light", deviceCategory = "Utility")
+    )
+
+    smartHome.turnOnTv()
+    smartHome.printSmartTvInfo()
+    smartHome.turnOnLight()
+    smartHome.printSmartLightInfo()
+    println("Total number of devices currently turned on: ${smartHome.deviceTurnOnCount}")
+    println()
+
+    smartHome.increaseTvVolume()
+    smartHome.decreaseTvVolume()
+    smartHome.changeTvChannelToNext()
+    smartHome.changeTvChannelToPrevious()
+    smartHome.increaseLightBrightness()
+    smartHome.decreaseLightBrightness()
+    println()
+
+    smartHome.turnOffAllDevices()
+    println("Total number of devices currently turned on: ${smartHome.deviceTurnOnCount}.")
+}
