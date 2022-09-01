@@ -2,14 +2,16 @@
 fun main() {
     //The Int parameter is named quantity, but could be named anything or
     //omitted like the cupcake function.
-    val coins: (Int) -> String = { quantity ->
-        "$quantity quarters"
-    }
+    //It's possible to omit the parameter name (quantity) and the -> symbol, as is a single parameter
+    /* val coins: (Int) -> String = { quantity ->
+        "$quantity quarters" */
 
     // Variable calling another function
-    val treatFunction = trickOrTreat(false, coins)
+    val treatFunction = trickOrTreat(false) { "$it quarters" }
     val trickFunction = trickOrTreat(true, null)
-    treatFunction()
+    repeat(4) {
+        treatFunction()
+    }
     trickFunction()
 }
 
