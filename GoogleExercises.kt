@@ -1,4 +1,4 @@
-/** EXERCISE 01
+/** EXERCISE 01 - Phone Notification
 fun main() {
     val morningNotification = 51
     val eveningNotification = 135
@@ -21,7 +21,7 @@ fun printNotificationSummary(numberOfMessages: Int) {
 // Your phone is blowing up! You have 99+ notifications.
  **/
 
-/** EXERCISE 02
+/** EXERCISE 02 - Movie Ticket Price
 fun main() {
     val child = 5
     val adult = 28
@@ -50,7 +50,7 @@ The movie ticket price for a person aged 28 is $25.
 The movie ticket price for a person aged 87 is $20.
  **/
 
-// EXERCISE 03
+/** EXERCISE 03 - Temperature Converter
 fun main() {
     val celsiusTemp = 27.0
     val fahTemp = 10.0
@@ -80,4 +80,27 @@ fun printFinalTemperature(
 27.0 degrees Celsius is 80.60 degrees Fahrenheit.
 350.0 degrees Kelvin is 76.85 degrees Celsius.
 10.0 degrees Fahrenheit is 260.93 degrees Kelvin.
- */
+ */*/
+
+// EXERCISE 04 - Song Catalog
+/* Create a class that can represent the structure of a song. The Song class must include these code elements:
+
+Properties for the title, artist, year published, and play count
+A property that indicates whether the song is popular. If the play count is less than 1,000, consider it unpopular.
+A method that prints a song description in this format:
+"[Title], performed by [artist], was released in [year published]." */
+    class SongCatalog {
+        val title = "Ten"
+        val artist = "Pearl Jam"
+        val yearPublished = 1995
+        val playCount = 40000
+
+    }
+    fun main() {
+        val song = SongCatalog()
+        when (song.playCount >= 1000){
+            true -> println("This song is Popular")
+            else -> {}
+        }
+        println("${song.title}, performed by ${song.artist}, was released in ${song.yearPublished}")
+    }
