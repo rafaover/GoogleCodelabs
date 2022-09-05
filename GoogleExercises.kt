@@ -82,7 +82,7 @@ fun printFinalTemperature(
 10.0 degrees Fahrenheit is 260.93 degrees Kelvin.
  */*/
 
-/** EXERCISE 04 - Song Catalog
+/** EXERCISE 04 - Song Catalog (Option 01)
 /* Create a class that can represent the structure of a song. The Song class must include these code elements:
 
 Properties for the title, artist, year published, and play count
@@ -107,3 +107,35 @@ A method that prints a song description in this format:
         val songPlay = SongCatalog()
         songPlay.playSong()
     } **/
+
+/** EXERCISE 04 - Song Catalog (Option 2)
+
+class SongCatalog(val title: String, val artist: String, val yearPublished: Int, val playCount: Int) {
+    fun playSong(){
+        when (playCount >= 1000){
+        true -> println("This song is Popular")
+        else -> {}
+        }
+        println("${title}, performed by ${artist}, was released in ${yearPublished}.")
+    }
+}
+fun main() {
+    val callingTheBand = SongCatalog(readln(),readln(),readln().toInt(),readln().toInt())
+    callingTheBand.playSong()
+} **/
+
+/** EXERCISE 05 - INTERNET PROFILE (Incomplete)
+ * Complete the showProfile() function so that the program print the output **/
+
+fun main() {
+    val amanda = Person("Amanda", 33, "play tennis", null)
+    val atiqah = Person("Atiqah", 28, "climb", amanda)
+
+    amanda.showProfile()
+    atiqah.showProfile()
+}
+class Person(val name: String, val age: Int, val hobby: String?, val referrer: Person?) {
+    fun showProfile() {
+        // Fill in code
+    }
+}
