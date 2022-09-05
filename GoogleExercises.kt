@@ -124,7 +124,7 @@ fun main() {
     callingTheBand.playSong()
 } **/
 
-/** EXERCISE 05 - Internet Profile (Incomplete)
+/** EXERCISE 05 - Internet Profile
  * Complete the showProfile() function so that the program print the output
 
 fun main() {
@@ -156,3 +156,26 @@ Age: 28
 Likes to climb. Has a referrer named Amanda, who likes to play tennis.
  */
  **/
+
+/** EXERCISE 06 - Foldable Phones **/
+
+fun main(){
+}
+
+class Phone(var isScreenLightOn: Boolean = false){
+    fun switchOn() {
+        isScreenLightOn = true
+    }
+    fun switchOff() {
+        isScreenLightOn = false
+    }
+    fun checkPhoneScreenLight() {
+        val phoneScreenLight = if(isScreenLightOn) "on" else "off"
+        println("The phone screen's light is $phoneScreenLight.")
+    }
+}
+class FoldablePhone {
+/** A property that indicates whether the phone is folded.
+A different switchOn() function behavior than the Phone class so that it only turns the screen on when the phone isn't folded.
+Methods to change the folding state.*/
+}

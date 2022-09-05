@@ -78,7 +78,6 @@ class SmartHome (
 ) {
     var deviceTurnOnCount = 0
         private set
-
     //method calling methods
     fun turnOnTv() {
         deviceTurnOnCount++
