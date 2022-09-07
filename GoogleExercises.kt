@@ -182,5 +182,4 @@ class FoldablePhone(var phoneFolded: Boolean = false) {
         isScreenLightOn = false
     }
 }
-//Testing Email Again
-//Testing Email
+//Removing Duplicates
