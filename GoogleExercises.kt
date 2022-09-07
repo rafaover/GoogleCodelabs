@@ -120,7 +120,11 @@ class SongCatalog(val title: String, val artist: String, val yearPublished: Int,
     }
 }
 fun main() {
-    val callingTheBand = SongCatalog(readln(),readln(),readln().toInt(),readln().toInt())
+    val callingTheBand = SongCatalog(
+        readln(),
+        readln(),
+        readln().toInt(),
+        readln().toInt())
     callingTheBand.playSong()
 } **/
 
@@ -182,4 +186,3 @@ class FoldablePhone(var phoneFolded: Boolean = false) {
         isScreenLightOn = false
     }
 }
-//Removing Duplicates
