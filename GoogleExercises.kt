@@ -183,3 +183,4 @@ class FoldablePhone(var phoneFolded: Boolean = false) {
     }
 }
 //Testing Email Again
+//Testing Email
