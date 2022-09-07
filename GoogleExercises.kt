@@ -162,7 +162,7 @@ Likes to climb. Has a referrer named Amanda, who likes to play tennis.
 fun main(){
 }
 
-class Phone(var isScreenLightOn: Boolean = false){
+open class Phone (var isScreenLightOn: Boolean = false){
     fun switchOn() {
         isScreenLightOn = true
     }
@@ -174,8 +174,11 @@ class Phone(var isScreenLightOn: Boolean = false){
         println("The phone screen's light is $phoneScreenLight.")
     }
 }
-class FoldablePhone {
-/** A property that indicates whether the phone is folded.
-A different switchOn() function behavior than the Phone class so that it only turns the screen on when the phone isn't folded.
-Methods to change the folding state.*/
+class FoldablePhone(var phoneFolded: Boolean = false) {
+    fun switchOn() {
+        isScreenLightOn = true
+    }
+    fun switchOff() {
+        isScreenLightOn = false
+    }
 }
