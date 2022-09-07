@@ -161,7 +161,7 @@ Likes to climb. Has a referrer named Amanda, who likes to play tennis.
  */
  **/
 
-/** EXERCISE 06 - Foldable Phones **/
+/** EXERCISE 06 - Foldable Phones
 
 fun main(){
     val newFoldablePhone = FoldablePhone()
@@ -204,4 +204,4 @@ class FoldablePhone(var phoneIsFolded: Boolean = true): Phone() {
         phoneIsFolded = false
         println("Phone is open")
     }
-}
+} **/
