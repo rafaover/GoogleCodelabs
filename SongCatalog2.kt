@@ -1,6 +1,6 @@
 // EXERCISE 04 - Song Catalog (Option 02)
 
-class SongCatalog(val title: String, val artist: String, val yearPublished: Int, val playCount: Int) {
+class SongCatalog2(val title: String, val artist: String, val yearPublished: Int, val playCount: Int) {
     fun playSong(){
         when (playCount >= 1000){
         true -> println("This song is Popular")
@@ -11,7 +11,7 @@ class SongCatalog(val title: String, val artist: String, val yearPublished: Int,
 }
 
 fun main() {
-    val callingTheBand = SongCatalog(
+    val callingTheBand = SongCatalog2(
         readln(),
         readln(),
         readln().toInt(),
