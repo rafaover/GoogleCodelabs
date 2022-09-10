@@ -1,5 +1,5 @@
 # GoogleLearning
-Google Learning Projects.
+Google Learning Projects. A series of small exercises using steps from Google Learning. 
 
 1. SmartHome - A little code to learn classes. Main goal is to activate some home appliances and light switches at home.
 2. Trick Or Treat
