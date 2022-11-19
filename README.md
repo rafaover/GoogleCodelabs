@@ -10,3 +10,4 @@ Google Learning Projects. A series of small exercises using steps from Google Le
 7. Foldable Phone
 8. Song Catalog
 9. Special Auction
+10. Dice Roll
