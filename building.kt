@@ -33,9 +33,9 @@ fun main(){
     println("Material: ${buildingMaterial}")
     println("Capacity: ${capacity}")
     println("Has room? ${hasRoom()}")
-    getRoom()
+    getroom()
     println("Has room? ${hasRoom()}")
-    getRoom()
+    getroom()
     println("Floor area: %.2f".format(floorArea()))
     println("Carpet Length: ${calculateMaxCarpetLength()}")
 	}
