@@ -11,10 +11,18 @@ open class SmartDevice (val name: String, val category: String) {
     }
 }
 
+// Created a SmartTvDevice subclass that extends the SmartDevice superclass.
+// The constructor definition for SmartTvDevice doesn't specify whether the properties 
+// are mutable or immutable (var or val). This means that the  deviceName and deviceCategory 
+// parameters are merely constructor parameters instead of class properties. You won't 
+// be able to use them in the class, but simply pass them to the superclass constructor.
 class SmartTvDevice(deviceName: String, deviceCategory: String):
     SmartDevice(name = deviceName, category = deviceCategory) {
 
     override val deviceType = "Smart TV"
+
+    // Delegates from the RageRegulator Class. Instead of using Set and Get.
+    // Using the delegate class to define the speakerVolume and channelNumber properties.
     private var speakerVolume by RangeRegulator(initialValue = 0, minValue = 0, maxValue = 100)
     private var channelNumber by RangeRegulator(initialValue = 1, minValue = 0, maxValue = 200)
 
@@ -54,6 +62,10 @@ class SmartLightDevice(deviceName: String, deviceCategory: String) :
     override val deviceType = "Smart Light"
     private var brightnessLevel by RangeRegulator(initialValue = 2, minValue = 0, maxValue = 100)
 
+    // To provide this device-specific behavior, you need to override the turnOn() and turnOff() 
+    // method defined in the superclass. To override means to intercept the action, typically 
+    // to take manual control. When you override a method, the method in the subclass interrupts 
+    // the execution of the method defined in the superclass and provides its own execution.
     override fun turnOn() {
         super.turnOn()
         brightnessLevel = 2
@@ -125,13 +137,18 @@ class SmartHome (
     }
 }
 
+// In the RangeRegulator class's primary constructor, add an initialValue parameter, 
+// a private minValue property, and a private maxValue property, all of Int type.
 class RangeRegulator(
     initialValue: Int,
     private val minValue: Int,
     private val maxValue: Int
+    // These types inside the angled brackets represent generic types.
 ) : ReadWriteProperty<Any?, Int> {
 
     private var fieldData = initialValue
+    // The KProperty is an interface that represents a declared property 
+    // and lets you access the metadata on a delegated property.
     override fun getValue(thisRef: Any?, property: KProperty<*>): Int {
         return fieldData
     }
