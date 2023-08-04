@@ -11,4 +11,4 @@ Google Learning Projects.
 8. Song Catalog
 9. Special Auction
 10. Dice Roll
-11. Quiz using generics-objects-extensions
+11. Quiz using generics-objects-extensions-interface
