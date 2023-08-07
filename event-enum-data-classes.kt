@@ -23,9 +23,20 @@ fun main() {
     events.forEach {
     	if (it.durationInMinutes < 60) shortEventsCount++
     }
-    // OR
-    // val shortEvents = events.filter { it.durationInMinutes < 60 }
-    // println("You have ${shortEvents.size} short events.")
-    
+// val shortEvents = events.filter { it.durationInMinutes < 60 }
+// println("You have ${shortEvents.size} short events.")
     println("You have ${shortEventsCount} short events.")
+    
+    val eventsMorning = events.filter { it.daypart == Daypart.MORNING }.count()
+    val eventsArvo = events.filter { it.daypart == Daypart.AFTERNOON }.count()
+    val eventsEvening = events.filter { it.daypart == Daypart.EVENING }.count()
+    println("""
+Morning: ${eventsMorning} events
+Afternoon: ${eventsArvo} events
+Evening: ${eventsEvening} events
+    """)
+// 	val groupedEvents = events.groupBy { it.daypart }
+// 	groupedEvents.forEach { (daypart, events) ->
+//     	println("$daypart: ${events.size} events")
+// 	}
 }
