@@ -18,6 +18,14 @@ var events = mutableListOf<Event>(
 	Event(title = "Check out latest Android Jetpack library", daypart = Daypart.EVENING, durationInMinutes = 45),
 )
 
+// Added extension function to avoid touching the data class, print line 45.
+val Event.durationOfEvent: String
+    get() = if (this.durationInMinutes < 60) {
+        "short"
+    } else {
+        "long"
+    }
+
 fun main() {
     var shortEventsCount = 0
     events.forEach {
@@ -29,9 +37,10 @@ fun main() {
     val eventsArvo = events.filter { it.daypart == Daypart.AFTERNOON }.count()
     val eventsEvening = events.filter { it.daypart == Daypart.EVENING }.count()
     println("""
-Morning: ${eventsMorning} events
-Afternoon: ${eventsArvo} events
-Evening: ${eventsEvening} events
+    Morning: ${eventsMorning} events
+    Afternoon: ${eventsArvo} events
+    Evening: ${eventsEvening} events
     """)
     println("Last event of the day: ${events.last().title}")
+    println("Duration of first event of the day: ${events[0].durationOfEvent}")
 }
